@@ -34,7 +34,8 @@ function reqListener(text) {
 	var messages = json.messages;
 	console.log(messages)
 	var latestmessage = messages[messages.length - 1]
-	if (lastMessage != latestmessage && !latestmessage){
+
+	if (lastMessage != latestmessage && latestmessage){
 		lastMessage = latestmessage
 		console.log("Updating card")
 
@@ -42,15 +43,12 @@ function reqListener(text) {
 			document.getElementById("cardstage").innerHTML = card1 + lastMessage + card2;
 			$("#cardstage").fadeIn();
 		});
-
-		// document.getElementById("cardstage").innerHTML = card1 + lastMessage + card2
-
 	}
 }
 
 window.onload = function () {
 	$("#cardstage").fadeOut(0, () => {
-			document.getElementById("cardstage").innerHTML = card1 + lastMessage + card2;
+			document.getElementById("cardstage").innerHTML = card1 + card2;
 	});
 
 
