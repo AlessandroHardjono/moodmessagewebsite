@@ -34,7 +34,7 @@ function reqListener(text) {
 	var messages = json.messages;
 	console.log(messages)
 	var latestmessage = messages[messages.length - 1]
-	if (lastMessage != latestmessage){
+	if (lastMessage != latestmessage && !latestmessage){
 		lastMessage = latestmessage
 		console.log("Updating card")
 
